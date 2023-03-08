@@ -1,23 +1,19 @@
 <script setup>
-import { ref, reactive, toRefs} from 'vue'
+import { ref, reactive, toRefs } from 'vue'
 
 defineProps({
   msg: String,
 })
 
-const count = ref(0)
-const formData = reactive({
-  name: "这是测试对象"
-})
-
-return {
-  ...toRefs(formData)
-}
+const count = ref(0);
+const formData = toRefs(reactive({
+  label: 'vite'
+}))
 </script>
 
 <template>
   <h1>{{ msg }}</h1>
-
+  <p>{{formData.label}}</p>
   <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>
     <p>

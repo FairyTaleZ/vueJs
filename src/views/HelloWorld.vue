@@ -1,11 +1,18 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, reactive, toRefs} from 'vue'
 
 defineProps({
   msg: String,
 })
 
 const count = ref(0)
+const formData = reactive({
+  name: "这是测试对象"
+})
+
+return {
+  ...toRefs(formData)
+}
 </script>
 
 <template>
